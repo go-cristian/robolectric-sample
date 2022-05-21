@@ -1,0 +1,103 @@
+{
+  "recordedResponse": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "OK",
+    "headers": [
+      {
+        "name": "Server",
+        "value": "Cowboy"
+      },
+      {
+        "name": "Connection",
+        "value": "keep-alive"
+      },
+      {
+        "name": "X-Powered-By",
+        "value": "Express"
+      },
+      {
+        "name": "Access-Control-Allow-Origin",
+        "value": "*"
+      },
+      {
+        "name": "Access-Control-Allow-Methods",
+        "value": "GET,PUT,POST,DELETE,OPTIONS"
+      },
+      {
+        "name": "Access-Control-Allow-Headers",
+        "value": "X-Requested-With,Content-Type,Cache-Control,access_token"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Content-Length",
+        "value": "38"
+      },
+      {
+        "name": "Etag",
+        "value": "\"-1559334020\""
+      },
+      {
+        "name": "Vary",
+        "value": "Accept-Encoding"
+      },
+      {
+        "name": "Date",
+        "value": "Sat, 21 May 2022 12:59:40 GMT"
+      },
+      {
+        "name": "Via",
+        "value": "1.1 vegur"
+      }
+    ],
+    "body": [
+      123,
+      34,
+      116,
+      114,
+      97,
+      110,
+      115,
+      108,
+      97,
+      116,
+      101,
+      100,
+      34,
+      58,
+      34,
+      72,
+      101,
+      108,
+      108,
+      111,
+      32,
+      87,
+      111,
+      114,
+      108,
+      100,
+      33,
+      34,
+      44,
+      34,
+      105,
+      100,
+      34,
+      58,
+      34,
+      49,
+      34,
+      125
+    ]
+  },
+  "recordedRequest": {
+    "url": "https://6286cb6d7864d2883e79cf96.mockapi.io/translate/translate/1",
+    "headers": [],
+    "method": "GET",
+    "body": ""
+  }
+}
