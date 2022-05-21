@@ -5,9 +5,8 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.*
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 
 @Composable
 fun MainScreen(
@@ -21,9 +20,14 @@ fun MainScreen(
             onValueChange = { text = it },
             label = { Text("Enter text") },
             maxLines = 1,
+            modifier = Modifier.testTag("field"),
         )
         value.MapToView()
-        Button(onClick = { viewModel.translate(text) }) {
+        Button(
+            modifier = Modifier.testTag("translate-cta"),
+            onClick = { viewModel.translate(text) },
+            enabled = value is MainViewModel.State.Loading || text.isNotEmpty()
+        ) {
             Text("Translate")
         }
     }

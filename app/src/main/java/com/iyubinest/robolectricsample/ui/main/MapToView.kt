@@ -2,6 +2,8 @@ package com.iyubinest.robolectricsample.ui.main
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 
 @Composable
 fun MainViewModel.State.MapToView() {
@@ -9,6 +11,6 @@ fun MainViewModel.State.MapToView() {
         is MainViewModel.State.Error -> Text(text = "Error: $cause")
         is MainViewModel.State.Loading -> Text(text = "Loading...")
         is MainViewModel.State.Idle -> {}
-        is MainViewModel.State.Success -> Text(text = value.term)
+        is MainViewModel.State.Success -> Text(text = value.term, Modifier.testTag("result"))
     }
 }
