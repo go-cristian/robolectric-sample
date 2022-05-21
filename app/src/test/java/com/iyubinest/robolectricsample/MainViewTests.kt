@@ -22,19 +22,26 @@ class MainViewTests : BaseComponentTest() {
 
     @Test
     fun `translates properly`() {
+        // Given
         coEvery { mainUseCase.execute(any()) } returns MainUseCase.MainUseCaseResponse(
             UseCaseResponse.Success(MainUseCase.MainUseCaseData("Hello World!"))
         )
         testView { MainScreen(remember { MainViewModel(mainUseCase) }) }
+        // When
         composeTestRule.onNodeWithTag("field").performTextInput("Hola Mundo!")
         composeTestRule.onNodeWithTag("translate-cta").performClick()
+        // Then
         composeTestRule.onNodeWithTag("result").assertTextContains("Hello World!")
         composeTestRule.onNodeWithText("Hello World!").assertExists()
     }
 
     @Test
     fun `disables button if no text`() {
+        // Given
+        testView { MainScreen(remember { MainViewModel(mainUseCase) }) }
+        // When
         composeTestRule.onNodeWithTag("field").performTextInput("")
+        // Then
         composeTestRule.onNodeWithTag("translate-cta").assertIsNotEnabled()
     }
 }
